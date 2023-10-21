@@ -13,6 +13,8 @@
     - Redux Store 
     - Sign-out feature
     - Update Profile
+    - Bug Fixes - User profile update/Browse without auth 
+    - unsubscribe to onAuthStateChange callback 
 
     - Fetch from TMDB movies 
 

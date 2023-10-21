@@ -8,15 +8,14 @@ import {
 
 import { updateProfile } from "firebase/auth";
 import { useDispatch } from "react-redux";
-
 import { auth } from "../utils/firebase";
-import { useNavigate } from "react-router-dom";
 import { addUser } from "../utils/Redux/userSlice";
+import { user_avatar } from "../utils/constants";
+
 
 const Login = () => {
   const [form, setForm] = useState(true);
   const [errorMessage, setErrorMessage] = useState(null);
-  const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const toggleForm = () => {
@@ -45,7 +44,7 @@ const Login = () => {
           updateProfile(user, {
             //update Profile
             displayName: displayName.current.value,
-            photoURL: "https://avatars.githubusercontent.com/u/77275400?v=4",
+            photoURL: user_avatar,
           })
             .then(() => {
               const { uid, email, displayName, photoURL } = auth.currentUser;
@@ -57,7 +56,6 @@ const Login = () => {
                   photoURL: photoURL,
                 })
               );
-              navigate("/browse");
             })
             .catch((error) => {
               setErrorMessage(errorMessage);
@@ -69,6 +67,7 @@ const Login = () => {
           setErrorMessage(errorCode + "-" + errorMessage);
         });
     }
+
     // Sign-in Logic
     else {
       signInWithEmailAndPassword(
@@ -80,7 +79,6 @@ const Login = () => {
           // sign-in
           const user = userCredential.user;
           console.log(user);
-          navigate("/browse");
         })
         .catch((error) => {
           const errorCode = error.code;
