@@ -13,10 +13,20 @@
     - Redux Store 
     - Sign-out feature
     - Update Profile
-    - Bug Fixes - User profile update/Browse without auth 
+    - Bug Fixes - 1.User profile update  2.Browse without auth 
     - unsubscribe to onAuthStateChange callback 
-
-    - Fetch from TMDB movies 
+    - Added hardcoded values to constant file/utils
+    - Registered on TMDB app , got access token , Documentation 
+    - Fetch from TMDB Now Playing Movies Api 
+    - custom hooks for Now Playing 
+    - create movieSlice 
+    - update store for movieData
+    - mainContainer and SecondaryContainer 
+    - Main Container : videoTitle and videoBackground 
+    - Fetch data for Trailer Video
+    - Update store with Trailer video
+    - Embed video (youtube) and >autoplay=1&mute=1
+    - css to videoTitle (gradient) 
 
 # Features
 
