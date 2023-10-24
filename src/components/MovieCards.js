@@ -9,3 +9,4 @@ const MovieCards = ({ alt, posterPath }) => {
 };
 
 export default MovieCards;
+ 

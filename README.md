@@ -27,6 +27,14 @@
     - Update store with Trailer video
     - Embed video (youtube) and >autoplay=1&mute=1
     - css to videoTitle (gradient) 
+    - Browse Page Completed
+    - Movie Lists Added 
+    - Scrollable Movie Cards added 
+    - GPT Search page 
+    - GPT search bar 
+    - Multi-language feature in GPT Search component 
+    - Integerate GPT Api and get movie suggestions 
+    - Open AI key  
 
 # Features
 

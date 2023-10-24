@@ -4,13 +4,16 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { addUser, removeUser } from "../utils/Redux/userSlice";
 import { useEffect } from "react";
-import { logo } from "../utils/constants";
+import { Supported_lang, logo } from "../utils/constants";
+import { toggleGptSearchView } from "../utils/Redux/gptSlice";
+import { languageChange } from "../utils/Redux/configSlice";
 
 const Header = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const user = useSelector((store) => store.user);
+  const showGptSearch = useSelector((store) => store.gpt.showGptSearch);
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
@@ -46,11 +49,37 @@ const Header = () => {
       });
   };
 
+  const handleGptSearch = () => {
+    dispatch(toggleGptSearchView());
+  };
+
+  const handleLangChange = (e) => {
+    dispatch(languageChange(e.target.value));
+  };
+
   return (
-    <div className="absolute w-screen px-8 py-1 bg-gradient-to-b from-black z-50 flex justify-between">
+    <div className="absolute w-screen px-8 py-1 bg-gradient-to-b from-black z-50 flex justify-between cursor-pointer">
       <img className="w-48" src={logo} alt="netflix-logo" />
       {user && (
         <div className="flex p-2 m-2">
+          {showGptSearch && (
+            <select
+              className="rounded-md font-semibold p-2 m-2 bg-red-800 text-white"
+              onChange={handleLangChange}
+            >
+              {Supported_lang.map((lang) => (
+                <option className="font-semibold" key={lang.id} value={lang.id}>
+                  {lang.name}
+                </option>
+              ))}
+            </select>
+          )}
+          <button
+            className="cursor-pointer bg-red-800 px-4 rounded-md text-white font-semibold mx-4 hover:bg-red-900"
+            onClick={handleGptSearch}
+          >
+            {showGptSearch ? "Homepage": "GPT Search"}
+          </button>
           <img
             src={user.photoURL}
             alt="user-icon"

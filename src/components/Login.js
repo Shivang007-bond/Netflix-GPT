@@ -10,7 +10,7 @@ import { updateProfile } from "firebase/auth";
 import { useDispatch } from "react-redux";
 import { auth } from "../utils/firebase";
 import { addUser } from "../utils/Redux/userSlice";
-import { user_avatar } from "../utils/constants";
+import { Background_url, user_avatar } from "../utils/constants";
 
 
 const Login = () => {
@@ -93,7 +93,7 @@ const Login = () => {
 
       <div className="absolute">
         <img
-          src="https://assets.nflxext.com/ffe/siteui/vlv3/ab180a27-b661-44d7-a6d9-940cb32f2f4a/7fb62e44-31fd-4e1f-b6ad-0b5c8c2a20ef/IN-en-20231009-popsignuptwoweeks-perspective_alpha_website_large.jpg"
+          src={Background_url}
           alt="background"
         />
       </div>
