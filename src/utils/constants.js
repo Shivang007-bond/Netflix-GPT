@@ -24,3 +24,5 @@ export const Supported_lang = [
   { id: "ESP", name: "Spanish" },
   { id: "RU", name: "Russian" },
 ];
+
+export const gpt_key = "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";
