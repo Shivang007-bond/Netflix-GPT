@@ -34,7 +34,13 @@
     - GPT search bar 
     - Multi-language feature in GPT Search component 
     - Integerate GPT Api and get movie suggestions 
-    - Open AI key  
+    - OpenAI Api key 
+    - gpt api's integerated 
+    - TMDB search api's used to render sesrched movies
+    - Movie names and Movie data added to the GPT slice 
+    - GPT movie suggestions added 
+    
+    
 
 # Features
 

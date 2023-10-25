@@ -8,8 +8,7 @@ export const options = {
   method: "GET",
   headers: {
     accept: "application/json",
-    Authorization:
-      "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI0ZTNiNTc1NzgwNTg4YjgwZmNjN2MxZjVjNTQ5MGQwMCIsInN1YiI6IjY1MzM3MzIxYTBiZTI4MDEzOWEyMTZhZiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.sJj7vnL7a2Exp31adlICRpclYlW9nn1WJKxei9qbry4",
+    Authorization: "Bearer" + process.env.REACT_APP_TMDB_key,
   },
 };
 
@@ -25,4 +24,4 @@ export const Supported_lang = [
   { id: "RU", name: "Russian" },
 ];
 
-export const gpt_key = "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";
+export const gpt_key = process.env.REACT_APP_gpt_key;

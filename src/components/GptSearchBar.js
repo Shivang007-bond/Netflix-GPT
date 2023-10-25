@@ -23,7 +23,6 @@ const GptSearchBar = () => {
   };
 
   const handleGptSearchClick = async () => {
-
     //call GPT API
     const prompt =
       "Act as a movie recommendation system and suggest some movies for the query :" +
