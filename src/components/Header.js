@@ -58,10 +58,10 @@ const Header = () => {
   };
 
   return (
-    <div className="absolute w-screen px-8 py-1 bg-gradient-to-b from-black z-50 flex justify-between cursor-pointer">
-      <img className="w-48" src={logo} alt="netflix-logo" />
+    <div className="absolute w-screen px-8 py-1 bg-gradient-to-b from-black z-50 flex flex-col  md:flex-row justify-between cursor-pointer">
+      <img className="w-48 mx-auto md:mx-0" src={logo} alt="netflix-logo" />
       {user && (
-        <div className="flex p-2 m-2">
+        <div className="flex p-2 m-2 justify-between">
           {showGptSearch && (
             <select
               className="rounded-md font-semibold p-2 m-2 bg-red-800 text-white"
@@ -75,18 +75,18 @@ const Header = () => {
             </select>
           )}
           <button
-            className="cursor-pointer bg-red-800 px-4 rounded-md text-white font-semibold mx-4 hover:bg-red-900"
+            className="h-10 cursor-pointer bg-red-800 px-3 rounded-md text-white font-semibold my-2 md:mx-4 hover:bg-red-900"
             onClick={handleGptSearch}
           >
-            {showGptSearch ? "Homepage": "GPT Search"}
+            {showGptSearch ? "Homepage" : "GPT Search"}
           </button>
           <img
             src={user.photoURL}
             alt="user-icon"
-            className="w-12 h-12 rounded-md"
+            className="hidden md:block w-12 h-12 rounded-md"
           />
           <button
-            className="cursor-pointer text-white font-extrabold mx-4"
+            className="cursor-pointer text-white font-extrabold mx-1 md:mx-4"
             onClick={handleSignOut}
           >
             Sign out

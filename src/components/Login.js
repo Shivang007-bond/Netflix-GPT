@@ -12,7 +12,6 @@ import { auth } from "../utils/firebase";
 import { addUser } from "../utils/Redux/userSlice";
 import { Background_url, user_avatar } from "../utils/constants";
 
-
 const Login = () => {
   const [form, setForm] = useState(true);
   const [errorMessage, setErrorMessage] = useState(null);
@@ -95,14 +94,15 @@ const Login = () => {
         <img
           src={Background_url}
           alt="background"
+          className="h-screen object-cover md:w-screen"
         />
       </div>
 
       <form
         onSubmit={(e) => e.preventDefault()}
-        className="absolute w-4/12 p-16 bg-black bg-opacity-90 my-32 mx-auto right-0 left-0 text-white rounded-md"
+        className="w-full mt-28 md:mt-14 md:w-4/12 absolute p-8 md:p-16 bg-black bg-opacity-90 my-20 md:my-28 mx-auto right-0 left-0 text-white rounded-md"
       >
-        <h1 className="text-3xl font-semibold my-4">
+        <h1 className="text-xl md:text-3xl font-semibold my-4">
           {form ? "Sign In" : "Sign Up"}
         </h1>
 
@@ -111,7 +111,7 @@ const Login = () => {
             ref={displayName}
             type="text"
             placeholder="Full Name"
-            className="p-3 my-4 w-full  bg-gray-600 bg-opacity-80  rounded-sm"
+            className="p-2 md:p-3 my-4 w-full  bg-gray-600 bg-opacity-80  rounded-sm"
           />
         )}
 
@@ -119,20 +119,20 @@ const Login = () => {
           ref={email}
           type="text"
           placeholder="Email or phone number"
-          className="p-3 my-4 w-full bg-gray-600 bg-opacity-80 rounded-sm"
+          className="p-2 md:p-3 w-full bg-gray-600 bg-opacity-80 rounded-sm"
         />
         <input
           ref={password}
           type="password"
           placeholder="Password"
-          className="p-3 my-4 w-full  bg-gray-600 bg-opacity-80  rounded-sm"
+          className="p-2 md:p-3 my-4 w-full  bg-gray-600 bg-opacity-80  rounded-sm"
         />
 
         <p className="p-1 text-red-800 font-semibold text-md">{errorMessage}</p>
 
         <button
           onClick={handleButtonClick}
-          className="p-3 mt-6 bg-red-700 text-white font-semibold rounded-sm w-full cursor-pointer"
+          className="p-2 mt-2 md:p-3 md:mt-6 bg-red-700 text-white font-semibold rounded-sm w-full cursor-pointer"
         >
           {form ? "Sign In" : "Sign Up"}
         </button>

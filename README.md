@@ -38,8 +38,10 @@
     - gpt api's integerated 
     - TMDB search api's used to render sesrched movies
     - Movie names and Movie data added to the GPT slice 
-    - GPT movie suggestions added 
-    
+    - GPT movie suggestions added by reusing Movielist component
+    - .env file added
+    - memoization (removing unnecessary API calls)
+    - Made site Responsive
     
 
 # Features

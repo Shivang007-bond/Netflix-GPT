@@ -8,7 +8,7 @@ export const options = {
   method: "GET",
   headers: {
     accept: "application/json",
-    Authorization: "Bearer" + process.env.REACT_APP_TMDB_key,
+    Authorization: " Bearer " + process.env.REACT_APP_TMDB_KEY,
   },
 };
 
@@ -24,4 +24,4 @@ export const Supported_lang = [
   { id: "RU", name: "Russian" },
 ];
 
-export const gpt_key = process.env.REACT_APP_gpt_key;
+export const gpt_key = process.env.REACT_APP_GPT_KEY;
